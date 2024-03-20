@@ -1,6 +1,6 @@
 // Enum : group of constants
 
-enum Size {
+const enum Size {
   small,
   medium,
   large,
