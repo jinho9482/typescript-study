@@ -1,13 +1,9 @@
-type Employee = {
-  readonly id: number;
-  name: string;
-  retire: (date: Date) => void;
-};
+// Union type : can get 2 types
+function kgToLbs(weight: number | string): number {
+  // Narrowing
+  if (typeof weight === "number") return weight * 2.2;
+  else return parseInt(weight) * 2.2;
+}
 
-let employee: Employee = {
-  id: 1,
-  name: "Jinho",
-  retire: (date: Date) => {
-    console.log(date);
-  },
-};
+console.log(kgToLbs(10));
+console.log(kgToLbs("10kg"));
