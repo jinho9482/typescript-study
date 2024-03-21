@@ -1,7 +1,11 @@
-// Literal : exact and specific value
+function greet(name: string | null | undefined) {
+  if (name) console.log(name.toUpperCase());
+  else console.log("Hi");
+}
 
-type Quantity = 50 | 100;
-// let quantity: 50 | 100 = 100;
-let quantity: Quantity = 100;
+// null and undefined cannot be converted to uppercase, but for js, it doesn't matter. If I wanna pass it, I can change a setting in .json file.
 
-type Metric = "cm" | "inch";
+// console.log(greet(1)); // error
+console.log(greet("Hi")); // HI
+console.log(greet(null)); // Hi
+console.log(greet(undefined)); // Hi
