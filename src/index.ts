@@ -4,10 +4,10 @@ type Employee = {
   retire: (date: Date) => void;
 };
 
-let employee: Employee = ({} = {
+let employee: Employee = {
   id: 1,
   name: "Jinho",
   retire: (date: Date) => {
     console.log(date);
   },
-});
+};
