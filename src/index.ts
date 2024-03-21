@@ -1,11 +1,13 @@
-function greet(name: string | null | undefined) {
-  if (name) console.log(name.toUpperCase());
-  else console.log("Hi");
+type Customer = {
+  birthday: Date;
+};
+
+function getCustomer(id: number): Customer | null {
+  return id === 0 ? null : { birthday: new Date() };
 }
 
-// null and undefined cannot be converted to uppercase, but for js, it doesn't matter. If I wanna pass it, I can change a setting in .json file.
+let customer = getCustomer(0);
+console.log(customer?.birthday); // undefined
 
-// console.log(greet(1)); // error
-console.log(greet("Hi")); // HI
-console.log(greet(null)); // Hi
-console.log(greet(undefined)); // Hi
+let customer1 = getCustomer(1);
+console.log(customer1?.birthday); // There's an error without optional chaining since it can be null
